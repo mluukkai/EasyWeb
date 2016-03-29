@@ -1,13 +1,14 @@
 import ohtu.*
 import ohtu.authentication.*
 import org.openqa.selenium.*
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 description 'User can log in with valid username/password-combination'
 
 scenario "user can login with correct password", {
     given 'login selected', {
-        driver = new HtmlUnitDriver();
+        driver = new FirefoxDriver();
         driver.get("http://localhost:8090");
         element = driver.findElement(By.linkText("login"));
         element.click();
